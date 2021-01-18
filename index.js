@@ -15,7 +15,7 @@ const handle = async ($, element, timestamp) => {
   if (content && count) {
     const res1 = await execute(query_sql, content)
     if (res1.length > 0) {
-      console.log(res1[0])
+      // console.log(res1[0])
       const { hot_id, hot_count } = res1[0]
       if (Number(count) && Number(hot_count) && Number(count) > Number(hot_count)) {
         await execute(update_sql, [count, timestamp, hot_id])
